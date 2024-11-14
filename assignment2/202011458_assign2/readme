@@ -1,0 +1,18 @@
+---------------------------------
+Student name : Kim Sungjin
+Student ID : 2020-11458
+Assignment Number : assignment2
+---------------------------------
+
+1. While doing this assignment, I only received help with the basic grammar of the C language (pointers, how to write functions) through internet searches
+2. It took a total of 2 days to complete this assignment.
+3. Through this assignment, I learned how to open and close a directory in a C language program, and learned that the properties of a directory or file can be retrieved through the 'lstat' function.
+
+<processDir Algorithm>
+1. The directory is opened using 'opendir'. If it fails to open, an error message is printed and the function exits.
+2. The 'getNext' function is used to iterate through directory entries, counting the number of entries. This count is used to allocate an array for the entries.
+3. The directory is reopened with 'opendir', and each entry is stored in an array. The entries are then sorted using 'qsort'.
+4. For each entry, The file name is truncated if necessary or kept as is. A full path is constructed, and 'lstat' is used to retrieve file information. If an error occurs while retrieving file information, an error message is printed; otherwise, statistics are updated.
+5. The type of file is identified and printed. Depending on the flags, the function either prints the entries in tree view or simple mode. If the F_VERBOSE flag is set, additional file details such as owner, group, size, and blocks are printed.
+6. If an entry is a directory, the function recursively calls 'processDir' to process the subdirectory.
+7. After processing all entries, the directory is closed using 'closedir'.
