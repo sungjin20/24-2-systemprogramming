@@ -1,8 +1,0 @@
-
-echo \# TEST 01. Redirection output test
-
-echo Hello SNUSH ! > file1
-cat file1
-rm file1
-
-echo \# TEST 01 end
