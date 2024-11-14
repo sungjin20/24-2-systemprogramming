@@ -171,6 +171,7 @@ int fork_exec(DynArray_T oTokens, int is_background) {
 			for(int i=0; i<MAX_BG_PRO; i++){
                 if(bg_array[i] == 0){
                     bg_array[i] = pid;
+					bg_cnt = pid;
                     bg_array_idx++;
                     break;
                 }
@@ -264,6 +265,7 @@ int iter_pipe_fork_exec(int pcount, DynArray_T oTokens, int is_background) {
 		int j=0;
 		for(int i=0; i<MAX_BG_PRO; i++){
 			if(bg_array[i] == 0){
+				if(j==0) bg_cnt = pids[j];
 				bg_array[i] = pids[j];
 				bg_array_idx++;
 				if(j == pcount){

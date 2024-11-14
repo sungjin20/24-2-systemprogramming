@@ -37,6 +37,7 @@ static void sigzombie_handler(int signo) {
                     break;
                 }
             }
+            if(bg_array_idx == 0) printf("[%d] Done background process group\n", bg_cnt);
             //
             // TODO sigzombie_handler() in snush.c end
             // 
